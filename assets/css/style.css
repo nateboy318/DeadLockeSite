@@ -3040,7 +3040,10 @@ footer.footer {
   /* ==========================================================================
      24. Team Page
      ========================================================================== */
-
+     .center-team {
+       display: flex;
+       justify-content: center;
+     }
      .team-img {
        border-radius: 50%;
        height: 160px;
