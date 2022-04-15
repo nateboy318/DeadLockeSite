@@ -3053,11 +3053,11 @@ footer.footer {
      }
 
      .team-con {
-       background-color: #707070;
+
        height: 280px;
        width: 220px;
        border-radius:3px;
        margin: 15px;
        text-shadow: 0 2px 4.8px rgba(30, 29, 50, 0.3);
-       box-shadow: 0.0px 5.0px 10.0px white;
+       
      }
