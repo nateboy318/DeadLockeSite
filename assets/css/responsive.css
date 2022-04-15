@@ -21,6 +21,9 @@
     display: none !important; } }
 
 @media screen and (max-width: 1300px) {
+  .center-team {
+    margin-left: 220px;
+  }
   /* Game section */
   .tm-tabs .tab-content .image-bl {
     right: 15px; } }
@@ -156,6 +159,9 @@
     text-align: right; } }
 
 @media screen and (max-width: 767px) {
+  .center-team {
+    margin-left: 100px;
+  }
   /* Post page */
   .post-quote blockquote:before {
     display: none; }
