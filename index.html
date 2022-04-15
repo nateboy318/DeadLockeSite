@@ -1,0 +1,2039 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DeadLocke</title>
+    <!-- Favicon -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="../assets/fonts/css/font-awesome.min.css" />
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <!-- Style -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <!-- Responsive Style -->
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="../assets/plugins/animate.css-master/animate.min.css">
+    <!-- Light Box -->
+    <link href="../assets/plugins/lightbox2-master/dist/css/lightbox.css" rel="stylesheet">
+    <!-- Video js -->
+    <link href="../assets/css/video-js.css" rel="stylesheet">
+    <!-- Datapicker -->
+    <link href="../assets/plugins/jquery-date-range-picker-master/dist/daterangepicker.min.css" rel="stylesheet">
+    <!-- Sliders -->
+    <link rel="stylesheet" type="text/cxss" href="../assets/plugins/slick-1.8.0/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/slick-1.8.0/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/slider/css/normalize.min.css" media="screen, print" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/slider/css/smartslider.min.css" media="screen, print" />
+    <style type="text/css">
+        .n2-ss-spinner-simple-white-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -20px;
+            background: #fff;
+            width: 20px;
+            height: 20px;
+            padding: 10px;
+            border-radius: 50%;
+            z-index: 1000;
+        }
+
+        .n2-ss-spinner-simple-white {
+            outline: 1px solid RGBA(0, 0, 0, 0);
+            width: 100%;
+            height: 100%;
+        }
+
+        .n2-ss-spinner-simple-white:before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin-top: -11px;
+            margin-left: -11px;
+        }
+
+        .n2-ss-spinner-simple-white:not(:required):before {
+            content: '';
+            border-radius: 50%;
+            border-top: 2px solid #333;
+            border-right: 2px solid transparent;
+            animation: n2SimpleWhite .6s linear infinite;
+            -webkit-animation: n2SimpleWhite .6s linear infinite;
+        }
+
+        @keyframes n2SimpleWhite {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes n2SimpleWhite {
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+    </style>
+    <script type="text/javascript">
+        window.N2PRO = 1;
+        window.N2GSAP = 1;
+        window.N2PLATFORM = "wordpress";
+        (function () {
+            var N = this;
+            N.N2_ = N.N2_ || {
+                r: [],
+                d: []
+            }, N.N2R = N.N2R || function () {
+                N.N2_.r.push(arguments)
+            }, N.N2D = N.N2D || function () {
+                N.N2_.d.push(arguments)
+            }
+        }).call(window);
+        if (!window.n2jQuery) {
+            window.n2jQuery = {
+                ready: function (cb) {
+                    console.error('n2jQuery will be deprecated!');
+                    N2R(['$'], cb);
+                }
+            }
+        }
+        window.nextend = {
+            localization: {},
+            ready: function (cb) {
+                console.error('nextend.ready will be deprecated!');
+                N2R('documentReady', function ($) {
+                    cb.call(window, $)
+                })
+            }
+        };
+        window.N2SSPRO = 1;
+        window.N2SS3C = "smartslider3";
+        nextend.fontsLoaded = false;
+        nextend.fontsLoadedActive = function () {
+            nextend.fontsLoaded = true;
+        };
+        var fontData = {
+            google: {
+                families: ["Roboto:300,400:latin"]
+            },
+            active: function () {
+                nextend.fontsLoadedActive()
+            },
+            inactive: function () {
+                nextend.fontsLoadedActive()
+            }
+        };
+        if (typeof WebFontConfig !== 'undefined') {
+            var _WebFontConfig = WebFontConfig;
+            for (var k in WebFontConfig) {
+                if (k == 'active') {
+                    fontData.active = function () {
+                        nextend.fontsLoadedActive();
+                        _WebFontConfig.active();
+                    }
+                } else if (k == 'inactive') {
+                    fontData.inactive = function () {
+                        nextend.fontsLoadedActive();
+                        _WebFontConfig.inactive();
+                    }
+                } else if (k == 'google') {
+                    if (typeof WebFontConfig.google.families !== 'undefined') {
+                        for (var i = 0; i < WebFontConfig.google.families.length; i++) {
+                            fontData.google.families.push(WebFontConfig.google.families[i]);
+                        }
+                    }
+                } else {
+                    fontData[k] = WebFontConfig[k];
+                }
+            }
+        }
+        if (typeof WebFont === 'undefined') {
+            window.WebFontConfig = fontData;
+        } else {
+            WebFont.load(fontData);
+        }
+    </script>
+    <script type="text/javascript" src="../assets/plugins/slider/js/n2-j.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/slider/js/nextend-gsap.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/slider/js/nextend-frontend.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/slider/js/smartslider-frontend.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/slider/js/smartslider-simple-type-frontend.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/slider/js/nextend-webfontloader.min.js"></script>
+    <script type="text/javascript">
+        N2R('documentReady', function ($) {
+
+            nextend.fontsDeferred = $.Deferred();
+            if (nextend.fontsLoaded) {
+                nextend.fontsDeferred.resolve();
+            } else {
+                nextend.fontsLoadedActive = function () {
+                    nextend.fontsLoaded = true;
+                    nextend.fontsDeferred.resolve();
+                };
+                var intercalCounter = 0;
+                nextend.fontInterval = setInterval(function () {
+                    if (intercalCounter > 3 || document.documentElement.className.indexOf('wf-active') !==
+                        -1) {
+                        nextend.fontsLoadedActive();
+                        clearInterval(nextend.fontInterval);
+                    }
+                    intercalCounter++;
+                }, 1000);
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <!-- PRELOADER START -->
+    <div class="loader-wrapper">
+        <div class='cssload-loader'>
+            <div class='cssload-inner cssload-one'></div>
+            <div class='cssload-inner cssload-two'></div>
+            <div class='cssload-inner cssload-three'></div>
+        </div>
+    </div>
+    <!-- PRELOADER END -->
+    <!-- HEADER START -->
+    <div class="header-line-wrapper">
+        <header class="header-wrapper fixed-top plr100">
+            <div class="table height-100p">
+                <div class="table-row">
+                    <div class="table-cell valign-middle text-left">
+                        <a href="index.html" class="logo">
+                            <img src="../assets/images/logo.png" alt="" class="img-responsive inline-block">
+                        </a>
+                    </div>
+                    <div class="table-cell valign-top text-center vm-sm">
+                        <div class="main-menu">
+                            <span class="toggle_menu">
+                                <span></span>
+                            </span>
+                            <center>
+                            <ul class="menu clearfix">
+                                <li class="inline-block active">
+                                    <a href="index.html">
+                                        Homepage
+                                    </a>
+                                </li>
+
+                                <li class="inline-block menu-item-has-children">
+                                    <a href="gallery-regular.html">
+                                        Gallery
+                                    </a>
+
+                                </li>
+                                <li class="inline-block menu-item-has-children">
+                                    <a href="https://deadlocke.gitbook.io/untitled/overview/project-overview">
+                                        White Paper
+                                    </a>
+
+                                </li>
+
+
+                            </ul>
+                        </center>
+                        </div>
+                    </div>
+
+                    <div class="table-cell valign-top text-right">
+                        <div class="right-bl">
+                            <div class="search-wrapper inline-block valign-middle">
+
+                                <a href="https://discord.gg/sWU7KtVDTF" class="btn header-btn ml25 color-white hidden-sm hidden-xs">
+                                    Join us Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <!-- HEADER END -->
+    <!-- SLIDER START -->
+    <section class="main-slider">
+        <style type="text/css">
+            div#n2-ss-4 {
+                width: 1200px;
+                float: left;
+                margin: 0px 0px 0px 0px;
+            }
+
+            html[dir="rtl"] div#n2-ss-4 {
+                float: right;
+            }
+
+            div#n2-ss-4 .n2-ss-slider-1 {
+                position: relative;
+                padding-top: 0px;
+                padding-right: 0px;
+                padding-bottom: 0px;
+                padding-left: 0px;
+                height: 500px;
+                border-style: solid;
+                border-width: 0px;
+                border-color: #3e3e3e;
+                border-color: RGBA(62, 62, 62, 1);
+                border-radius: 0px;
+                background-clip: padding-box;
+                background-repeat: repeat;
+                background-position: 50% 50%;
+                background-size: cover;
+                background-attachment: scroll;
+            }
+
+            div#n2-ss-4 .n2-ss-slider-background-video-container {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+
+            div#n2-ss-4 .n2-ss-slider-2 {
+                position: relative;
+                width: 100%;
+                height: 100%;
+            }
+
+            .x-firefox div#n2-ss-4 .n2-ss-slider-2 {
+                opacity: 0.99999;
+            }
+
+            div#n2-ss-4 .n2-ss-slider-3 {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                outline: 1px solid rgba(0, 0, 0, 0);
+                z-index: 10;
+            }
+
+            div#n2-ss-4 .n2-ss-slide-backgrounds,
+            div#n2-ss-4 .n2-ss-slider-3>.n-particles-js-canvas-el,
+            div#n2-ss-4 .n2-ss-slider-3>.n2-ss-divider {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            div#n2-ss-4 .n2-ss-slide-backgrounds {
+                z-index: 10;
+            }
+
+            div#n2-ss-4 .n2-ss-slider-3>.n-particles-js-canvas-el {
+                z-index: 12;
+            }
+
+            div#n2-ss-4 .n2-ss-slide-backgrounds>* {
+                overflow: hidden;
+            }
+
+            div#n2-ss-4 .n2-ss-slide {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 20;
+                display: block;
+                -webkit-backface-visibility: hidden;
+            }
+
+            div#n2-ss-4 .n2-ss-layers-container {
+                position: relative;
+                width: 1200px;
+                height: 500px;
+            }
+
+            div#n2-ss-4 .n2-ss-parallax-clip>.n2-ss-layers-container {
+                position: absolute;
+                right: 0;
+            }
+
+            div#n2-ss-4 .n2-ss-slide {
+                -webkit-perspective: 1000px;
+                perspective: 1000px;
+            }
+
+            div#n2-ss-4 .n2-ss-slide-active {
+                z-index: 21;
+            }
+
+            div#n2-ss-4 .n2-ss-button-container,
+            div#n2-ss-4 .n2-ss-button-container a {
+                display: inline-block;
+            }
+
+            div#n2-ss-4 .n2-ss-button-container.n2-ss-fullwidth,
+            div#n2-ss-4 .n2-ss-button-container.n2-ss-fullwidth a {
+                display: block;
+            }
+
+            div#n2-ss-4 .n2-ss-button-container.n2-ss-nowrap {
+                white-space: nowrap;
+            }
+
+            div#n2-ss-4 .n2-ss-button-container a div {
+                display: inline;
+                font-size: inherit;
+            }
+
+            div#n2-ss-4 .n2-ss-button-container a>div {
+                display: inline-flex;
+                align-items: center;
+                vertical-align: top;
+            }
+
+            div#n2-ss-4 .n2-ss-button-container i {
+                font-size: 100%;
+                vertical-align: baseline;
+            }
+
+            div#n2-ss-4 .n2-ss-button-container a[data-iconplacement="left"] i {
+                margin-right: 0.3em;
+            }
+
+            div#n2-ss-4 .n2-ss-button-container a[data-iconplacement="right"] i {
+                margin-left: 0.3em;
+            }
+
+            div#n2-ss-4 .n2-ss-control-bullet {
+                visibility: hidden;
+                text-align: center;
+                justify-content: center;
+            }
+
+            div#n2-ss-4 .n2-ss-control-bullet-horizontal.n2-ss-control-bullet-fullsize {
+                width: 100%;
+            }
+
+            div#n2-ss-4 .n2-ss-control-bullet-vertical.n2-ss-control-bullet-fullsize {
+                height: 100%;
+                flex-flow: column;
+            }
+
+            div#n2-ss-4 .nextend-bullet-bar {
+                display: inline-flex;
+                visibility: visible;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+
+            div#n2-ss-4 .n2-bar-justify-content-left {
+                justify-content: flex-start;
+            }
+
+            div#n2-ss-4 .n2-bar-justify-content-center {
+                justify-content: center;
+            }
+
+            div#n2-ss-4 .n2-bar-justify-content-right {
+                justify-content: flex-end;
+            }
+
+            div#n2-ss-4 .n2-ss-control-bullet-vertical>.nextend-bullet-bar {
+                flex-flow: column;
+            }
+
+            div#n2-ss-4 .n2-ss-control-bullet-fullsize>.nextend-bullet-bar {
+                display: flex;
+            }
+
+            div#n2-ss-4 .n2-ss-control-bullet-horizontal.n2-ss-control-bullet-fullsize>.nextend-bullet-bar {
+                flex: 1 1 auto;
+            }
+
+            div#n2-ss-4 .n2-ss-control-bullet-vertical.n2-ss-control-bullet-fullsize>.nextend-bullet-bar {
+                height: 100%;
+            }
+
+            div#n2-ss-4 .nextend-bullet-bar>div {
+                display: inline-block;
+                cursor: pointer;
+                transition: background-color 0.4s;
+                vertical-align: top;
+            }
+
+            div#n2-ss-4 .nextend-bullet-bar>div.n2-active {
+                cursor: default;
+            }
+
+            div#n2-ss-4 div.n2-ss-bullet-thumbnail-container {
+                position: absolute;
+                opacity: 0;
+                z-index: 10000000;
+            }
+
+            div#n2-ss-4 .n2-ss-bullet-thumbnail-container .n2-ss-bullet-thumbnail {
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-be0a516f76efd05e36733289aaf2a6de-hover {
+                font-family: 'Roboto', 'Arial';
+                color: #ffffff;
+                font-size: 300%;
+                text-shadow: none;
+                line-height: 1;
+                font-weight: 700;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: uppercase;
+                font-weight: 700;
+                text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.3);
+                font-family: "Agency FB";
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-e5e826a3ba83ea69731d81df1c0fa84d-hover {
+                font-family: 'Roboto', 'Arial';
+                color: #ffffff;
+                font-size: 600%;
+                text-shadow: none;
+                line-height: 1;
+                font-weight: 700;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: uppercase;
+                font-weight: 700;
+                text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.3);
+                font-family: "Agency FB";
+            }
+
+            div#n2-ss-4 .n2-style-01ddb7ca1f625e69d1a2381951aa5192-heading {
+                background: #ffffff;
+                background: RGBA(255, 255, 255, 0);
+                opacity: 1;
+                padding: 0px 0px 0px 0px;
+                box-shadow: none;
+                border-width: 0px;
+                border-style: solid;
+                border-color: #000000;
+                border-color: RGBA(0, 0, 0, 1);
+                border-radius: 0px;
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph {
+                font-family: 'Roboto', 'Arial';
+                color: #ffffff;
+                font-size: 87.5%;
+                text-shadow: none;
+                line-height: 1.5;
+                font-weight: normal;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: none;
+                text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.3);
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph a,
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph a:FOCUS {
+                font-family: 'Roboto', 'Arial';
+                color: #e6ab00;
+                font-size: 100%;
+                text-shadow: none;
+                line-height: 1.5;
+                font-weight: normal;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: none;
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph a:HOVER,
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph a:ACTIVE {
+                font-family: 'Roboto', 'Arial';
+                color: #e6ab00;
+                font-size: 100%;
+                text-shadow: none;
+                line-height: 1.5;
+                font-weight: normal;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: none;
+            }
+
+            div#n2-ss-4 .n2-font-06be61400c1a4b339e67534a8a262348-link a {
+                font-family: 'Roboto', 'Arial';
+                color: #e6ab00;
+                font-size: 87.5%;
+                text-shadow: none;
+                line-height: 1.5;
+                font-weight: 700;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: uppercase;
+                font-weight: 700;
+                border-radius: 10px;
+                box-shadow: 0 2px 4.8px 0.3px rgba(0, 0, 0, 0.3);
+                transition: all 0.3s ease-out;
+            }
+
+            div#n2-ss-4 .n2-font-06be61400c1a4b339e67534a8a262348-link a:HOVER,
+            div#n2-ss-4 .n2-font-06be61400c1a4b339e67534a8a262348-link a:ACTIVE,
+            div#n2-ss-4 .n2-font-06be61400c1a4b339e67534a8a262348-link a:FOCUS {
+                color: #ffffff;
+            }
+
+            div#n2-ss-4 .n2-style-588404275f372121297e39cfe0b03e24-heading {
+                background: #ffffff;
+                opacity: 1;
+                padding: 19px 50px 19px 50px;
+                box-shadow: none;
+                border-width: 0px;
+                border-style: solid;
+                border-color: #000000;
+                border-color: RGBA(0, 0, 0, 1);
+                border-radius: 0px;
+                transition: all 0.3s ease-out;
+            }
+
+            div#n2-ss-4 .n2-style-588404275f372121297e39cfe0b03e24-heading:Hover,
+            div#n2-ss-4 .n2-style-588404275f372121297e39cfe0b03e24-heading:ACTIVE,
+            div#n2-ss-4 .n2-style-588404275f372121297e39cfe0b03e24-heading:FOCUS {
+                background: #e6ab00;
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-be0a516f76efd05e36733289aaf2a6de-hover {
+                font-family: 'Roboto', 'Arial';
+                color: #ffffff;
+                font-size: 300%;
+                text-shadow: none;
+                line-height: 1;
+                font-weight: 700;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: uppercase;
+                font-weight: 700;
+                text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.3);
+                font-family: "Agency FB";
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-e5e826a3ba83ea69731d81df1c0fa84d-hover {
+                font-family: 'Roboto', 'Arial';
+                color: #ffffff;
+                font-size: 600%;
+                text-shadow: none;
+                line-height: 1;
+                font-weight: 700;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: uppercase;
+                font-weight: 700;
+                text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.3);
+                font-family: "Agency FB";
+            }
+
+            div#n2-ss-4 .n2-style-01ddb7ca1f625e69d1a2381951aa5192-heading {
+                background: #ffffff;
+                background: RGBA(255, 255, 255, 0);
+                opacity: 1;
+                padding: 0px 0px 0px 0px;
+                box-shadow: none;
+                border-width: 0px;
+                border-style: solid;
+                border-color: #000000;
+                border-color: RGBA(0, 0, 0, 1);
+                border-radius: 0px;
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph {
+                font-family: 'Roboto', 'Arial';
+                color: #ffffff;
+                font-size: 87.5%;
+                text-shadow: none;
+                line-height: 1.5;
+                font-weight: normal;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: none;
+                text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.3);
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph a,
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph a:FOCUS {
+                font-family: 'Roboto', 'Arial';
+                color: #e6ab00;
+                font-size: 100%;
+                text-shadow: none;
+                line-height: 1.5;
+                font-weight: normal;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: none;
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph a:HOVER,
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph a:ACTIVE {
+                font-family: 'Roboto', 'Arial';
+                color: #e6ab00;
+                font-size: 100%;
+                text-shadow: none;
+                line-height: 1.5;
+                font-weight: normal;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: none;
+            }
+
+            div#n2-ss-4 .n2-font-06be61400c1a4b339e67534a8a262348-link a {
+                font-family: 'Roboto', 'Arial';
+                color: #e6ab00;
+                font-size: 87.5%;
+                text-shadow: none;
+                line-height: 1.5;
+                font-weight: 700;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: uppercase;
+                font-weight: 700;
+                border-radius: 10px;
+                box-shadow: 0 2px 4.8px 0.3px rgba(0, 0, 0, 0.3);
+                transition: all 0.3s ease-out;
+            }
+
+            div#n2-ss-4 .n2-font-06be61400c1a4b339e67534a8a262348-link a:HOVER,
+            div#n2-ss-4 .n2-font-06be61400c1a4b339e67534a8a262348-link a:ACTIVE,
+            div#n2-ss-4 .n2-font-06be61400c1a4b339e67534a8a262348-link a:FOCUS {
+                color: #ffffff;
+            }
+
+            div#n2-ss-4 .n2-style-588404275f372121297e39cfe0b03e24-heading {
+                background: #ffffff;
+                opacity: 1;
+                padding: 19px 50px 19px 50px;
+                box-shadow: none;
+                border-width: 0px;
+                border-style: solid;
+                border-color: #000000;
+                border-color: RGBA(0, 0, 0, 1);
+                border-radius: 0px;
+                transition: all 0.3s ease-out;
+            }
+
+            div#n2-ss-4 .n2-style-588404275f372121297e39cfe0b03e24-heading:Hover,
+            div#n2-ss-4 .n2-style-588404275f372121297e39cfe0b03e24-heading:ACTIVE,
+            div#n2-ss-4 .n2-style-588404275f372121297e39cfe0b03e24-heading:FOCUS {
+                background: #e6ab00;
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-be0a516f76efd05e36733289aaf2a6de-hover {
+                font-family: 'Roboto', 'Arial';
+                color: #ffffff;
+                font-size: 300%;
+                text-shadow: none;
+                line-height: 1;
+                font-weight: 700;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: uppercase;
+                font-weight: 700;
+                text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.3);
+                font-family: "Agency FB";
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-e5e826a3ba83ea69731d81df1c0fa84d-hover {
+                font-family: 'Roboto', 'Arial';
+                color: #ffffff;
+                font-size: 600%;
+                text-shadow: none;
+                line-height: 1;
+                font-weight: 700;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: uppercase;
+                font-weight: 700;
+                text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.3);
+                font-family: "Agency FB";
+            }
+
+            div#n2-ss-4 .n2-style-01ddb7ca1f625e69d1a2381951aa5192-heading {
+                background: #ffffff;
+                background: RGBA(255, 255, 255, 0);
+                opacity: 1;
+                padding: 0px 0px 0px 0px;
+                box-shadow: none;
+                border-width: 0px;
+                border-style: solid;
+                border-color: #000000;
+                border-color: RGBA(0, 0, 0, 1);
+                border-radius: 0px;
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph {
+                font-family: 'Roboto', 'Arial';
+                color: #ffffff;
+                font-size: 87.5%;
+                text-shadow: none;
+                line-height: 1.5;
+                font-weight: normal;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: none;
+                text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.3);
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph a,
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph a:FOCUS {
+                font-family: 'Roboto', 'Arial';
+                color: #e6ab00;
+                font-size: 100%;
+                text-shadow: none;
+                line-height: 1.5;
+                font-weight: normal;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: none;
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph a:HOVER,
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph a:ACTIVE {
+                font-family: 'Roboto', 'Arial';
+                color: #e6ab00;
+                font-size: 100%;
+                text-shadow: none;
+                line-height: 1.5;
+                font-weight: normal;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: none;
+            }
+
+            div#n2-ss-4 .n2-font-06be61400c1a4b339e67534a8a262348-link a {
+                font-family: 'Roboto', 'Arial';
+                color: #e6ab00;
+                font-size: 87.5%;
+                text-shadow: none;
+                line-height: 1.5;
+                font-weight: 700;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: uppercase;
+                font-weight: 700;
+                border-radius: 10px;
+                box-shadow: 0 2px 4.8px 0.3px rgba(0, 0, 0, 0.3);
+                transition: all 0.3s ease-out;
+            }
+
+            div#n2-ss-4 .n2-font-06be61400c1a4b339e67534a8a262348-link a:HOVER,
+            div#n2-ss-4 .n2-font-06be61400c1a4b339e67534a8a262348-link a:ACTIVE,
+            div#n2-ss-4 .n2-font-06be61400c1a4b339e67534a8a262348-link a:FOCUS {
+                color: #ffffff;
+            }
+
+            div#n2-ss-4 .n2-style-588404275f372121297e39cfe0b03e24-heading {
+                background: #ffffff;
+                opacity: 1;
+                padding: 19px 50px 19px 50px;
+                box-shadow: none;
+                border-width: 0px;
+                border-style: solid;
+                border-color: #000000;
+                border-color: RGBA(0, 0, 0, 1);
+                border-radius: 0px;
+                transition: all 0.3s ease-out;
+            }
+
+            div#n2-ss-4 .n2-style-588404275f372121297e39cfe0b03e24-heading:Hover,
+            div#n2-ss-4 .n2-style-588404275f372121297e39cfe0b03e24-heading:ACTIVE,
+            div#n2-ss-4 .n2-style-588404275f372121297e39cfe0b03e24-heading:FOCUS {
+                background: #e6ab00;
+            }
+
+            div#n2-ss-4 .n2-style-2f5b33e7e6c0fd4c646594fe712ed299-dot {
+                background: #000000;
+                background: RGBA(0, 0, 0, 0);
+                opacity: 1;
+                padding: 20px 9px 20px 9px;
+                box-shadow: none;
+                border-width: 0px;
+                border-style: solid;
+                border-color: #000000;
+                border-color: RGBA(0, 0, 0, 1);
+                border-radius: 0px;
+                transition: all 0.3s ease-out;
+            }
+
+            div#n2-ss-4 .n2-style-2f5b33e7e6c0fd4c646594fe712ed299-dot.n2-active,
+            div#n2-ss-4 .n2-style-2f5b33e7e6c0fd4c646594fe712ed299-dot:HOVER {
+                background: #ffffff;
+                background: RGBA(255, 255, 255, 0);
+                padding: 20px 9px 20px 9px;
+                transition: all 0.3s ease-out;
+            }
+
+            div#n2-ss-4 .n2-style-3e702635329eba6b6b98a2cfe62c4664-simple {
+                background: #ffffff;
+                background: RGBA(255, 255, 255, 0);
+                opacity: 1;
+                padding: 0px 0px 0px 0px;
+                box-shadow: none;
+                border-width: 0px;
+                border-style: solid;
+                border-color: #ffffff;
+                border-color: RGBA(255, 255, 255, 0);
+                border-radius: 0px;
+                transition: all 0.3s ease-out;
+            }
+
+            div#n2-ss-4 .n2-font-7b5c9760d048f32382e5cebedacdf830-dot,
+            div#n2-ss-4 .n2-font-7b5c9760d048f32382e5cebedacdf830-dot:FOCUS {
+                font-family: 'Agency FB';
+                color: #ffffff;
+                font-size: 150%;
+                text-shadow: none;
+                line-height: 1.2;
+                font-weight: normal;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: uppercase;
+                font-weight: 700;
+                opacity: 0.8;
+                -webkit-writing-mode: vertical-rl;
+                writing-mode: vertical-rl;
+                transition: all 0.3s ease-out;
+            }
+
+            div#n2-ss-4 .n2-font-7b5c9760d048f32382e5cebedacdf830-dot.n2-active,
+            div#n2-ss-4 .n2-font-7b5c9760d048f32382e5cebedacdf830-dot:HOVER,
+            div#n2-ss-4 .n2-font-7b5c9760d048f32382e5cebedacdf830-dot:ACTIVE {
+                color: #ffffff;
+                font-size: 150%;
+                opacity: 1;
+                transition: all 0.3s ease-out;
+            }
+        </style>
+        <div id="n2-ss-4-align" class="n2-ss-align">
+            <div class="n2-padding">
+                <div id="n2-ss-4" data-creator="Smart Slider 3" class="n2-ss-slider n2-ow n2-has-hover n2notransition n2-ss-load-fade " data-minFontSizedesktopPortrait="1"
+                    data-minFontSizedesktopLandscape="1" data-minFontSizetabletPortrait="1" data-minFontSizetabletLandscape="1"
+                    data-minFontSizemobilePortrait="1" data-minFontSizemobileLandscape="1" style="font-size: 16px;" data-fontsize="16">
+                    <div class="n2-ss-slider-1 n2-ss-swipe-element n2-ow" style="">
+                        <div class="n2-ss-slider-2 n2-ow">
+                            <div class="n2-ss-slider-3 n2-ow" style="">
+
+                                <div class="n2-ss-slide-backgrounds"></div>
+                                <div data-first="1" data-slide-duration="0" data-id="15" style="" class="n2-ss-slide n2-ss-canvas n2-ow  n2-ss-slide-15">
+                                    <div class="n2-ss-slide-background n2-ow" data-mode="fill">
+                                        <img data-hash="7f12344252192edee35072e997e65114" data-desktop="../assets/plugins/slider/images/slide-1.jpg" data-blur="0"
+                                            data-opacity="100" data-x="50" data-y="50" src="../assets/plugins/slider/images/slide-1.jpg"
+                                            alt="" />
+                                    </div>
+                                    <div class="n2-ss-layers-container n2-ow" data-csstextalign="center" style="">
+                                        <div class="n2-ss-layer n2-ow" style="overflow:visible;" data-csstextalign="inherit" data-has-maxwidth="0" data-desktopportraitmaxwidth="0"
+                                            data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-pm="content"
+                                            data-desktopportraitpadding="140|*|10|*|10|*|10|*|px+" data-desktopportraitinneralign="inherit"
+                                            data-sstype="content" data-hasbackground="0" data-rotation="0" data-desktopportrait="1"
+                                            data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1"
+                                            data-mobilelandscape="1" data-adaptivefont="1" data-desktopportraitfontsize="100"
+                                            data-plugin="rendered">
+                                            <div class="n2-ss-section-main-content n2-ss-layer-content n2-ow" style="padding:8.75em 0.625em 0.625em 0.625em ;" data-verticalalign="center">
+                                                <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+"
+                                                    data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0"
+                                                    data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer"
+                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDMyXHUwNDM1XHUwNDQwXHUwNDQ1XHUwNDQzIiwib3BhY2l0eSI6MCwieSI6NDAwfV19"
+                                                    data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1"
+                                                    data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1"
+                                                    data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
+                                                    data-mobileportraitfontsize="50" data-plugin="rendered">
+                                                    <div id="n2-ss-4item1" class="n2-font-be0a516f76efd05e36733289aaf2a6de-hover   n2-ow" style="display:block;">Welcome to</div>
+                                                </div>
+                                                <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+"
+                                                    data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0"
+                                                    data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer"
+                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDNiXHUwNDM1XHUwNDMyXHUwNDMwIiwiZGVsYXkiOjAuNSwib3BhY2l0eSI6MCwieCI6NDAwfV19"
+                                                    data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1"
+                                                    data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1"
+                                                    data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
+                                                    data-mobileportraitfontsize="50" data-plugin="rendered">
+                                                    <div id="n2-ss-4item2" class="n2-font-e5e826a3ba83ea69731d81df1c0fa84d-hover n2-style-01ddb7ca1f625e69d1a2381951aa5192-heading   n2-ow"
+                                                        style="display:block;">Deadlocke</div>
+                                                </div>
+                                                <div class="n2-ss-layer n2-ow" style="margin:2.5em 0em 0em 0em ;max-width: 955px;overflow:visible;" data-pm="normal" data-desktopportraitmargin="40|*|0|*|0|*|0|*|px+"
+                                                    data-desktopportraitheight="0" data-has-maxwidth="1" data-desktopportraitmaxwidth="955"
+                                                    data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer"
+                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJCbHVyIiwiZGVsYXkiOjAuOCwib3BhY2l0eSI6MCwibjJibHVyIjoxMH1dfQ=="
+                                                    data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1"
+                                                    data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1"
+                                                    data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
+                                                    data-mobileportraitfontsize="90" data-plugin="rendered">
+                                                    <div class="n2-ow n2-ow-all n2-ss-desktop n2-ss-mobile n2-ss-tablet">
+                                                        <p class="n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph   n2-ow">A multiverse based in NFTworlds created by builders for builders.
+                                                            <br /> </p>
+                                                    </div>
+                                                </div>
+                                                <div class="n2-ss-layer n2-ow" style="margin:3.125em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="50|*|0|*|0|*|0|*|px+"
+                                                    data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0"
+                                                    data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer"
+                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0NDNcdTA0NDVcdTA0MzBcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDNkXHUwNDM4XHUwNDM3XHUwNDQzIiwiZGVsYXkiOjEsIm9wYWNpdHkiOjAsInkiOi00MDB9XX0="
+                                                    data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1"
+                                                    data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1"
+                                                    data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
+                                                    data-mobileportraitfontsize="100" data-plugin="rendered">
+                                                    <div class="n2-ss-button-container n2-ow n2-font-06be61400c1a4b339e67534a8a262348-link  n2-ss-nowrap">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slide-duration="0" data-id="16" style="" class="n2-ss-slide n2-ss-canvas n2-ow  n2-ss-slide-16">
+                                    <div class="n2-ss-slide-background n2-ow" data-mode="fill">
+                                        <img data-hash="df538617dc01fb19a0bb4e642cc11f2d" data-desktop="../assets/plugins/slider/images/slide-2.jpg" data-blur="0"
+                                            data-opacity="100" data-x="50" data-y="50" src="../assets/plugins/slider/images/slide-2.jpg"
+                                            alt="" />
+                                    </div>
+                                    <div class="n2-ss-layers-container n2-ow" data-csstextalign="center" style="">
+                                        <div class="n2-ss-layer n2-ow" style="overflow:visible;" data-csstextalign="inherit" data-has-maxwidth="0" data-desktopportraitmaxwidth="0"
+                                            data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-pm="content"
+                                            data-desktopportraitpadding="140|*|10|*|10|*|10|*|px+" data-desktopportraitinneralign="inherit"
+                                            data-sstype="content" data-hasbackground="0" data-rotation="0" data-desktopportrait="1"
+                                            data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1"
+                                            data-mobilelandscape="1" data-adaptivefont="1" data-desktopportraitfontsize="100"
+                                            data-plugin="rendered">
+                                            <div class="n2-ss-section-main-content n2-ss-layer-content n2-ow" style="padding:8.75em 0.625em 0.625em 0.625em ;" data-verticalalign="center">
+                                                <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+"
+                                                    data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0"
+                                                    data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer"
+                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDMyXHUwNDM1XHUwNDQwXHUwNDQ1XHUwNDQzIiwib3BhY2l0eSI6MCwieSI6NDAwfV19"
+                                                    data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1"
+                                                    data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1"
+                                                    data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
+                                                    data-mobileportraitfontsize="50" data-plugin="rendered">
+                                                    <div id="n2-ss-4item5" class="n2-font-be0a516f76efd05e36733289aaf2a6de-hover   n2-ow" style="display:block;">Play 2 Earn</div>
+                                                </div>
+                                                <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+"
+                                                    data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0"
+                                                    data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer"
+                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDNiXHUwNDM1XHUwNDMyXHUwNDMwIiwiZGVsYXkiOjAuNSwib3BhY2l0eSI6MCwieCI6NDAwfV19"
+                                                    data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1"
+                                                    data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1"
+                                                    data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
+                                                    data-mobileportraitfontsize="50" data-plugin="rendered">
+                                                    <div id="n2-ss-4item6" class="n2-font-e5e826a3ba83ea69731d81df1c0fa84d-hover n2-style-01ddb7ca1f625e69d1a2381951aa5192-heading   n2-ow"
+                                                        style="display:block;"></div>
+                                                </div>
+                                                <div class="n2-ss-layer n2-ow" style="margin:2.5em 0em 0em 0em ;max-width: 955px;overflow:visible;" data-pm="normal" data-desktopportraitmargin="40|*|0|*|0|*|0|*|px+"
+                                                    data-desktopportraitheight="0" data-has-maxwidth="1" data-desktopportraitmaxwidth="955"
+                                                    data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer"
+                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJCbHVyIiwiZGVsYXkiOjAuOCwib3BhY2l0eSI6MCwibjJibHVyIjoxMH1dfQ=="
+                                                    data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1"
+                                                    data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1"
+                                                    data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
+                                                    data-mobileportraitfontsize="90" data-plugin="rendered">
+                                                    <div class="n2-ow n2-ow-all n2-ss-desktop n2-ss-mobile n2-ss-tablet">
+                                                        <p class="n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph   n2-ow">Battle in arena fights and crew wars to earn $wrld.
+                                                            <br />
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="n2-ss-layer n2-ow" style="margin:3.125em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="50|*|0|*|0|*|0|*|px+"
+                                                    data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0"
+                                                    data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer"
+                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0NDNcdTA0NDVcdTA0MzBcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDNkXHUwNDM4XHUwNDM3XHUwNDQzIiwiZGVsYXkiOjEsIm9wYWNpdHkiOjAsInkiOi00MDB9XX0="
+                                                    data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1"
+                                                    data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1"
+                                                    data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
+                                                    data-mobileportraitfontsize="100" data-plugin="rendered">
+                                                    <div class="n2-ss-button-container n2-ow n2-font-06be61400c1a4b339e67534a8a262348-link  n2-ss-nowrap">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slide-duration="0" data-id="17" style="" class="n2-ss-slide n2-ss-canvas n2-ow  n2-ss-slide-17">
+                                    <div class="n2-ss-slide-background n2-ow" data-mode="fill">
+                                        <img data-hash="daeb09696afe190d4a842f033c14d69b" data-desktop="../assets/plugins/slider/images/slide-3.jpg" data-blur="0"
+                                            data-opacity="100" data-x="50" data-y="50" src="../assets/plugins/slider/images/slide-3.jpg"
+                                            alt="" />
+                                    </div>
+                                    <div class="n2-ss-layers-container n2-ow" data-csstextalign="center" style="">
+                                        <div class="n2-ss-layer n2-ow" style="overflow:visible;" data-csstextalign="inherit" data-has-maxwidth="0" data-desktopportraitmaxwidth="0"
+                                            data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-pm="content"
+                                            data-desktopportraitpadding="140|*|10|*|10|*|10|*|px+" data-desktopportraitinneralign="inherit"
+                                            data-sstype="content" data-hasbackground="0" data-rotation="0" data-desktopportrait="1"
+                                            data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1"
+                                            data-mobilelandscape="1" data-adaptivefont="1" data-desktopportraitfontsize="100"
+                                            data-plugin="rendered">
+                                            <div class="n2-ss-section-main-content n2-ss-layer-content n2-ow" style="padding:8.75em 0.625em 0.625em 0.625em ;" data-verticalalign="center">
+                                                <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+"
+                                                    data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0"
+                                                    data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer"
+                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDMyXHUwNDM1XHUwNDQwXHUwNDQ1XHUwNDQzIiwib3BhY2l0eSI6MCwieSI6NDAwfV19"
+                                                    data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1"
+                                                    data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1"
+                                                    data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
+                                                    data-mobileportraitfontsize="50" data-plugin="rendered">
+                                                    <div id="n2-ss-4item9" class="n2-font-be0a516f76efd05e36733289aaf2a6de-hover   n2-ow" style="display:block;">Collect</div>
+                                                </div>
+                                                <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+"
+                                                    data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0"
+                                                    data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer"
+                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDNiXHUwNDM1XHUwNDMyXHUwNDMwIiwiZGVsYXkiOjAuNSwib3BhY2l0eSI6MCwieCI6NDAwfV19"
+                                                    data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1"
+                                                    data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1"
+                                                    data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
+                                                    data-mobileportraitfontsize="50" data-plugin="rendered">
+                                                    <div id="n2-ss-4item10" class="n2-font-e5e826a3ba83ea69731d81df1c0fa84d-hover n2-style-01ddb7ca1f625e69d1a2381951aa5192-heading   n2-ow"
+                                                        style="display:block;">NFTs in game</div>
+                                                </div>
+                                                <div class="n2-ss-layer n2-ow" style="margin:2.5em 0em 0em 0em ;max-width: 955px;overflow:visible;" data-pm="normal" data-desktopportraitmargin="40|*|0|*|0|*|0|*|px+"
+                                                    data-desktopportraitheight="0" data-has-maxwidth="1" data-desktopportraitmaxwidth="955"
+                                                    data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer"
+                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJCbHVyIiwiZGVsYXkiOjAuOCwib3BhY2l0eSI6MCwibjJibHVyIjoxMH1dfQ=="
+                                                    data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1"
+                                                    data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1"
+                                                    data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
+                                                    data-mobileportraitfontsize="90" data-plugin="rendered">
+                                                    <div class="n2-ow n2-ow-all n2-ss-desktop n2-ss-mobile n2-ss-tablet">
+                                                        <p class="n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph   n2-ow">Buy NFT weapons and vehicles in game that fit your play style
+                                                            <br />
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="n2-ss-layer n2-ow" style="margin:3.125em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="50|*|0|*|0|*|0|*|px+"
+                                                    data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0"
+                                                    data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer"
+                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0NDNcdTA0NDVcdTA0MzBcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDNkXHUwNDM4XHUwNDM3XHUwNDQzIiwiZGVsYXkiOjEsIm9wYWNpdHkiOjAsInkiOi00MDB9XX0="
+                                                    data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1"
+                                                    data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1"
+                                                    data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
+                                                    data-mobileportraitfontsize="100" data-plugin="rendered">
+                                                    <div class="n2-ss-button-container n2-ow n2-font-06be61400c1a4b339e67534a8a262348-link  n2-ss-nowrap">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-ssleft="0+100" data-sstop="height/2-bulletheight/2" data-offset="100" class="n2-ss-widget n2-ss-widget-display-desktop n2-ss-widget-display-tablet n2-ss-widget-display-mobile  n2-flex n2-ss-control-bullet n2-ss-control-bullet-vertical"
+                            style="position: absolute;">
+                            <div class="n2-style-3e702635329eba6b6b98a2cfe62c4664-simple  nextend-bullet-bar n2-ow n2-bar-justify-content-center">
+                                <div class="n2-ow n2-style-2f5b33e7e6c0fd4c646594fe712ed299-dot n2-font-7b5c9760d048f32382e5cebedacdf830-dot " tabindex="0">01</div>
+                                <div class="n2-ow n2-style-2f5b33e7e6c0fd4c646594fe712ed299-dot n2-font-7b5c9760d048f32382e5cebedacdf830-dot " tabindex="0">02</div>
+                                <div class="n2-ow n2-style-2f5b33e7e6c0fd4c646594fe712ed299-dot n2-font-7b5c9760d048f32382e5cebedacdf830-dot " tabindex="0">03</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="n2-clear"></div>
+                <div id="n2-ss-4-spinner" style="display: none;">
+                    <div>
+                        <div class="n2-ss-spinner-simple-white-container">
+                            <div class="n2-ss-spinner-simple-white"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            N2R(["nextend-frontend", "smartslider-frontend", "nextend-gsap", "nextend-webfontloader",
+                "smartslider-simple-type-frontend"
+            ], function () {
+                new N2Classes.SmartSliderSimple('#n2-ss-4', {
+                    "admin": false,
+                    "translate3d": 1,
+                    "callbacks": "",
+                    "background.video.mobile": 1,
+                    "randomize": {
+                        "randomize": 0,
+                        "randomizeFirst": 0
+                    },
+                    "align": "normal",
+                    "isDelayed": 0,
+                    "load": {
+                        "fade": 1,
+                        "scroll": 0
+                    },
+                    "playWhenVisible": 1,
+                    "playWhenVisibleAt": 0.5,
+                    "responsive": {
+                        "desktop": 1,
+                        "tablet": 1,
+                        "mobile": 1,
+                        "onResizeEnabled": true,
+                        "type": "fullpage",
+                        "downscale": 1,
+                        "upscale": 1,
+                        "minimumHeight": -1,
+                        "maximumHeight": -1,
+                        "maximumSlideWidth": 3000,
+                        "maximumSlideWidthLandscape": 3000,
+                        "maximumSlideWidthTablet": 3000,
+                        "maximumSlideWidthTabletLandscape": 3000,
+                        "maximumSlideWidthMobile": 3000,
+                        "maximumSlideWidthMobileLandscape": 3000,
+                        "maximumSlideWidthConstrainHeight": 0,
+                        "forceFull": 1,
+                        "forceFullOverflowX": "body",
+                        "forceFullHorizontalSelector": "body",
+                        "constrainRatio": 1,
+                        "verticalOffsetSelectors": "#wpadminbar",
+                        "decreaseSliderHeight": 0,
+                        "focusUser": 0,
+                        "focusAutoplay": 0,
+                        "deviceModes": {
+                            "desktopPortrait": 1,
+                            "desktopLandscape": 0,
+                            "tabletPortrait": 1,
+                            "tabletLandscape": 0,
+                            "mobilePortrait": 1,
+                            "mobileLandscape": 0
+                        },
+                        "normalizedDeviceModes": {
+                            "unknownUnknown": ["unknown", "Unknown"],
+                            "desktopPortrait": ["desktop", "Portrait"],
+                            "desktopLandscape": ["desktop", "Portrait"],
+                            "tabletPortrait": ["tablet", "Portrait"],
+                            "tabletLandscape": ["tablet", "Portrait"],
+                            "mobilePortrait": ["mobile", "Portrait"],
+                            "mobileLandscape": ["mobile", "Portrait"]
+                        },
+                        "verticalRatioModifiers": {
+                            "unknownUnknown": 1,
+                            "desktopPortrait": 1,
+                            "desktopLandscape": 1,
+                            "tabletPortrait": 1,
+                            "tabletLandscape": 1,
+                            "mobilePortrait": 1,
+                            "mobileLandscape": 1
+                        },
+                        "minimumFontSizes": {
+                            "desktopPortrait": 1,
+                            "desktopLandscape": 1,
+                            "tabletPortrait": 1,
+                            "tabletLandscape": 1,
+                            "mobilePortrait": 1,
+                            "mobileLandscape": 1
+                        },
+                        "ratioToDevice": {
+                            "Portrait": {
+                                "tablet": 0.7,
+                                "mobile": 0.5
+                            },
+                            "Landscape": {
+                                "tablet": 0,
+                                "mobile": 0
+                            }
+                        },
+                        "sliderWidthToDevice": {
+                            "desktopPortrait": 1200,
+                            "desktopLandscape": 1200,
+                            "tabletPortrait": 840,
+                            "tabletLandscape": 0,
+                            "mobilePortrait": 600,
+                            "mobileLandscape": 0
+                        },
+                        "basedOn": "combined",
+                        "orientationMode": "width_and_height",
+                        "scrollFix": 0,
+                        "overflowHiddenPage": 0,
+                        "desktopPortraitScreenWidth": 1200,
+                        "tabletPortraitScreenWidth": 800,
+                        "mobilePortraitScreenWidth": 440,
+                        "tabletLandscapeScreenWidth": 800,
+                        "mobileLandscapeScreenWidth": 440
+                    },
+                    "controls": {
+                        "scroll": 0,
+                        "drag": 1,
+                        "touch": "horizontal",
+                        "keyboard": 1,
+                        "tilt": 0
+                    },
+                    "lazyLoad": 0,
+                    "lazyLoadNeighbor": 0,
+                    "blockrightclick": 0,
+                    "maintainSession": 0,
+                    "autoplay": {
+                        "enabled": 1,
+                        "start": 1,
+                        "duration": 8000,
+                        "autoplayToSlide": -1,
+                        "autoplayToSlideIndex": -1,
+                        "allowReStart": 0,
+                        "pause": {
+                            "click": 1,
+                            "mouse": "0",
+                            "mediaStarted": 1
+                        },
+                        "resume": {
+                            "click": 0,
+                            "mouse": "0",
+                            "mediaEnded": 1,
+                            "slidechanged": 0
+                        }
+                    },
+                    "perspective": 1000,
+                    "layerMode": {
+                        "playOnce": 0,
+                        "playFirstLayer": 1,
+                        "mode": "skippable",
+                        "inAnimation": "mainInEnd"
+                    },
+                    "parallax": {
+                        "enabled": 1,
+                        "mobile": 0,
+                        "is3D": 0,
+                        "animate": 1,
+                        "horizontal": "mouse",
+                        "vertical": "mouse",
+                        "origin": "slider",
+                        "scrollmove": "both"
+                    },
+                    "background.parallax.tablet": 0,
+                    "background.parallax.mobile": 0,
+                    "postBackgroundAnimations": 0,
+                    "initCallbacks": [
+                        "N2D(\"SmartSliderWidgetBulletTransition\",function(t,i){function e(i,e){this.slider=i,this.slider.started(t.proxy(this.start,this,e))}return e.prototype.start=function(i){if(this.slider.sliderElement.data(\"bullet\"))return!1;this.slider.sliderElement.data(\"bullet\",this),this.axis=\"horizontal\",this.offset=0,this.parameters=i,this.bar=this.slider.sliderElement.find(\".nextend-bullet-bar\");var e=\"universalclick\";if(\"mouseenter\"==i.action&&(e=\"mouseenter\"),this.originalDots=this.dots=this.bar.find(\"div\").on(e,t.proxy(this.onDotClick,this)),this.slider.isShuffled){for(var s=[],o=[],a=0;this.slider.realSlides.length>a;a++){var r=this.slider.realSlides[a];s.push(this.dots.get(r.originalIndex)),o.push(this.parameters.thumbnails[r.originalIndex]),i.numeric&&this.dots.eq(r.originalIndex).html(a+1)}this.originalDots=this.dots=t(s).appendTo(this.dots.parent()),this.parameters.thumbnails=o}if(this.slider.sliderElement.on({slideCountChanged:t.proxy(this.onSlideCountChanged,this),sliderSwitchTo:t.proxy(this.onSlideSwitch,this)}),this.slider.firstSlideReady.done(t.proxy(this.onFirstSlideSet,this)),0==i.overlay){var n=!1;switch(i.area){case 1:n=\"Top\";break;case 12:n=\"Bottom\";break;case 5:n=\"Left\",this.axis=\"vertical\";break;case 8:n=\"Right\",this.axis=\"vertical\"}n&&(this.offset=parseFloat(this.bar.data(\"offset\")),this.slider.responsive.addStaticMargin(n,this))}this.initThumbnails()},e.prototype.onFirstSlideSet=function(t){this.dots.eq(t.index).addClass(\"n2-active\")},e.prototype.onDotClick=function(i){this.slider.directionalChangeToReal(this.originalDots.index(i.currentTarget)),t(i.target).blur()},e.prototype.onSlideSwitch=function(t,i){this.dots.filter(\".n2-active\").removeClass(\"n2-active\"),this.dots.eq(i).addClass(\"n2-active\")},e.prototype.isVisible=function(){return this.bar.is(\":visible\")},e.prototype.getSize=function(){return\"horizontal\"==this.axis?this.bar.height()+this.offset:this.bar.width()+this.offset},e.prototype.initThumbnails=function(){this.parameters.thumbnails.length>0&&this.dots.each(t.proxy(function(i,e){\"\"!=this.parameters.thumbnails[i]&&t(e).on({universalenter:t.proxy(this.showThumbnail,this,i)},{leaveOnSecond:!0})},this))},e.prototype.showThumbnail=function(i,e){var s=this.getThumbnail(i);NextendTween.to(s,.3,{opacity:1}).play(),this.originalDots.eq(i).on(\"universalleave.thumbnailleave\",t.proxy(this.hideThumbnail,this,i,s))},e.prototype.hideThumbnail=function(t,i,e){e.stopPropagation(),this.originalDots.eq(t).off(\"universalleave.thumbnailleave\"),NextendTween.to(i,.3,{opacity:0,onComplete:function(){i.remove()}}).play()},e.prototype.getThumbnail=function(i){var e=this.originalDots.eq(i),s=this.slider.sliderElement.offset(),o=e.offset(),a=e.outerWidth(),r=e.outerHeight(),n=t(\"<div\/>\").append(t(\"<div\/>\").css({width:this.parameters.thumbnailWidth,height:this.parameters.thumbnailHeight,backgroundImage:'url(\"'+this.parameters.thumbnails[i]+'\")'}).addClass(\"n2-ss-bullet-thumbnail\")).addClass(this.parameters.thumbnailStyle).addClass(\"n2-ss-bullet-thumbnail-container\").appendTo(this.slider.sliderElement);switch(this.parameters.thumbnailPosition){case\"right\":n.css({left:o.left-s.left+a,top:o.top-s.top+r\/2-n.outerHeight(!0)\/2});break;case\"left\":n.css({left:o.left-s.left-n.outerWidth(!0),top:o.top-s.top+r\/2-n.outerHeight(!0)\/2});break;case\"top\":n.css({left:o.left-s.left+a\/2-n.outerWidth(!0)\/2,top:o.top-s.top-n.outerHeight(!0)});break;case\"bottom\":n.css({left:o.left-s.left+a\/2-n.outerWidth(!0)\/2,top:o.top-s.top+r})}return e.data(\"thumbnail\",n),n},e.prototype.onSlideCountChanged=function(i,e,s){this.dots=t();for(var o=0;this.originalDots.length>o;o++)o%s==0?this.dots=this.dots.add(this.originalDots.eq(o).css(\"display\",\"\")):this.originalDots.eq(o).css(\"display\",\"none\");this.parameters.numeric&&this.dots.each(function(t,i){i.innerHTML=t+1})},e});",
+                        "new N2Classes.SmartSliderWidgetBulletTransition(this, {\"overlay\":true,\"area\":6,\"thumbnails\":[],\"action\":\"click\",\"numeric\":1});"
+                    ],
+                    "allowBGImageAttachmentFixed": false,
+                    "bgAnimationsColor": "RGBA(51,51,51,1)",
+                    "bgAnimations": 0,
+                    "mainanimation": {
+                        "type": "horizontal",
+                        "duration": 800,
+                        "delay": 0,
+                        "ease": "easeOutQuad",
+                        "parallax": 0,
+                        "shiftedBackgroundAnimation": "auto"
+                    },
+                    "carousel": 1,
+                    "dynamicHeight": 0
+                });
+            });
+        </script>
+        <div id="n2-ss-4-placeholder" style="position: relative;z-index:2;color:RGBA(0,0,0,0);max-height:3000px;">
+            <img style="width: 100%; max-width:3000px; display: block;" class="n2-ow" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMCIgd2lkdGg9IjEyMDAiIGhlaWdodD0iNTAwIiA+PC9zdmc+"
+                alt="Slider" />
+        </div>
+        <div class="sl-social bg-white">
+            <a href="https://twitter.com/DeadlockeDAO" class="social twitter">
+                <i class="fa fa-twitter color-3" aria-hidden="true"></i>
+            </a>
+
+        </div>
+    </section>
+    <!-- SLIDER END -->
+    <!-- GAME SECTION START -->
+    <section class="game-section pt150 pb85">
+        <div class="container">
+            <div class="row">
+                <div class="title-bl text-center wow fadeIn" data-wow-duration="2s">
+                    <div class="title color-white">
+                        Districts
+                    </div>
+                    <div class="subtitle">
+                        Coming soon
+                    </div>
+                </div>
+
+                    <div class="relative mt90">
+                        <div class="tab-pane fade active in text-left clearfix">
+                            <div class="tab-info col-lg-6 col-md-12 col-sm-12 col-xs-12 ptb90 pl100 equal-height">
+                                <div class=" table uppercase fsize-14 fweight-700">
+                                    <div class="table-cell valign-middle ws-20 color-1">
+                                        Deadlocke
+                                    </div>
+                                    <div class="table-cell valign-middle text-right">
+
+                                    </div>
+                                </div>
+                                <div class="uppercase fsize-32 fweight-700 font-agency color-white lheight-normal">
+                                    Rebels
+                                </div>
+                                <div class="mt50 lheight-26 fweight-300">
+
+                                    <p>A rowdy group of misfits always finding themselves in trouble. These wild fools come from all over the universe, partying and brawling their way through life. They eventually found themselves under the command of Sulamek Sclero after witnessing or hearing about his impossible stand against the Dark Moon Legion where he single handedly infiltrated a base of operations in Sector 12, eliminating over half of the troopers and releasing the prisoners all while drunk!!! And the only reason he went in there in the first place was because this base held the coordinates to a secret space station full of treasure and booze. The respect he gained from this insane event was the start of the crew you now see today. Due to the nature of these individuals, some of their past mistakes find them. No matter what situation may arise, the crew has each other’s backs ready to take it on with no hesitation. Not to mention they’re always jumping at the chance to outperform each other to prove who’s the best.</p>
+                                </div>
+                                <div class="mt60 table g-bottom">
+                                    <div class="table-cell valign-middle">
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <center>
+                            <div class="tab-img col-lg-6 col-md-12 col-sm-12 col-xs-12 pr0 equal-height">
+                                <div class="image-bl">
+                                    <img class="game-full-img" src="../assets/images/cover4.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade in text-left clearfix" id="tab-item-2">
+                            <div class="tab-info col-lg-6 col-md-12 col-sm-12 col-xs-12 ptb90 pl100 equal-height">
+                                <div class="tab-head table uppercase fsize-14 fweight-700">
+                                    <div class="table-cell valign-middle ws-20 color-1">
+                                        Deadlocke
+                                    </div>
+                                    <div class="table-cell valign-middle text-right">
+
+                                    </div>
+                                </div>
+                                <div class="uppercase fsize-32 fweight-700 font-agency color-white lheight-normal">
+                                    Arcadians
+                                </div>
+                                <div class="mt50 lheight-26 fweight-300">
+
+                                    <p>The descendants of the lost planet, Arcadia have spent most of their lives searching the stars. With the blood of strong will and determination they have taken on the mission from their parents and grandparents, never stopping the hunt for their home planet. While only a few of the current crew were young children during, what they call The Vanishing, they continually search for answers on how their home mysteriously disappeared without a trace. Burleok Razacla was one of those children who is now the Captain. Learning about the ancient structure that Deadlocke found underground on planet Epilon, he felt it might lead his crew closer to finding Arcadia and accepted Deadlockes invitation. After the realization that it was an advanced portal technology, the crew became fully invested in understanding it in hopes of completing their mission.</p>
+                                </div>
+                                <div class="mt60 table g-bottom">
+                                    <div class="table-cell valign-middle">
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <center>
+                            <div class="tab-img col-lg-6 col-md-12 col-sm-12 col-xs-12 pr0 equal-height">
+                                <div class="image-bl">
+                                    <img class="game-full-img" src="../assets/images/cover1.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade in text-left clearfix" id="tab-item-3">
+                            <div class="tab-info col-lg-6 col-md-12 col-sm-12 col-xs-12 ptb90 pl100 equal-height">
+                                <div class="tab-head table uppercase fsize-14 fweight-700">
+                                    <div class="table-cell valign-middle ws-20 color-1">
+                                        Deadlocke
+                                    </div>
+                                    <div class="table-cell valign-middle text-right">
+
+                                    </div>
+                                </div>
+                                <div class="uppercase fsize-32 fweight-700 font-agency color-white lheight-normal">
+                                    Lumineers
+                                </div>
+                                <div class="mt50 lheight-26 fweight-300">
+
+                                    <p>Growing up on what was once called The Dark Horizon, was a brutal and hungry life. With the on coming death of their sun, the light output became less and less making crops harder to grow naturally. The diminishing energy resources to power synthetic light sources along with the lack of science surrounding this subject created a massive problem. Instead of the nations coming together and working on a solution, many fled and war broke out sending the planet into an almost complete collapse. A young group comprised of hardened warriors and scientists band together with the intention of reigniting their civilization. After years of research and a few lucky breaks they had found a solution. They eventually built 3 mini artificial suns that emitted the right amount of light energy to increase crop production. This breakthrough turned around a dying planet, giving it a brighter future. And thus, the Lumineers were born.</p>
+                                </div>
+                                <div class="mt60 table g-bottom">
+                                    <div class="table-cell valign-middle">
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <center>
+                            <div class="tab-img col-lg-6 col-md-12 col-sm-12 col-xs-12 pr0 equal-height">
+                                <div class="image-bl">
+                                    <img class="game-full-img" src="../assets/images/cover3.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade in text-left clearfix" id="tab-item-4">
+                            <div class="tab-info col-lg-6 col-md-12 col-sm-12 col-xs-12 ptb90 pl100 equal-height">
+                                <div class="tab-head table uppercase fsize-14 fweight-700">
+                                    <div class="table-cell valign-middle ws-20 color-1">
+                                        Deadlocke
+                                    </div>
+                                    <div class="table-cell valign-middle text-right">
+
+                                    </div>
+                                </div>
+                                <div class="uppercase fsize-32 fweight-700 font-agency color-white lheight-normal">
+                                    Prophets
+                                </div>
+                                <div class="mt50 lheight-26 fweight-300">
+
+                                    <p>These brainy space pirates pride themselves in their knowledge of universal math and tech. With these combined they continually attempt to predict the future where they’ve come out correct more times than most would imagine. Though, they still have their miscalculations which have caused quite some problems with certain groups and worlds. These failures only push them to adjust their understanding of reality which leads them to be a force of intellect even the toughest pirates find hard to stand against.</p>
+                                </div>
+                                <div class="mt60 table g-bottom">
+                                    <div class="table-cell valign-middle">
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <center>
+                            <div class="tab-img col-lg-6 col-md-12 col-sm-12 col-xs-12 pr0 equal-height">
+                                <div class="image-bl">
+                                    <img class="game-full-img" src="../assets/images/cover2.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- GAME SECTION END -->
+    <!-- BLOG SECTION START -->
+    <section class="blog-section ptb90">
+        <div class="container">
+          <div class="row">
+              <div class="col-lg-12">
+                  <div class="title-bl text-center wow fadeIn" data-wow-duration="2s">
+                      <div class="title color-white">
+                          Ways To Earn
+                      </div>
+                      <div class="subtitle">
+
+                      </div>
+                  </div>
+                  <div class="title-description mt30 fweight-300 text-center">
+
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="bg-wrapper each-element mt90 clearfix">
+          <div class="container">
+              <div class="row">
+                  <div class="item col-lg-4 col-md-4 col-sm-12 col-sx-12">
+                      <a href="#" class="item-wrap">
+                          <div class="image">
+                              <img src="../assets/images/tournament.png" alt="" class="img-responsive">
+                          </div>
+                          <div class="item-info equal-height">
+
+                              <div class="item-title mt20" data-trim="40">Tournaments</div>
+                              <div class="item-text mt25 lheight-26">
+                                  Tournaments will be held on an ongoing basis depending on demand. We’ll hold special tournaments for crews and NFTworld communities as well. Bracket style tournaments, choose your best 6 fighters. Prizes will include and are not limited to: $wrld, 1of1 in game items, Keys, vehicles, and weapons.
+                              </div>
+                          </div>
+                          <div class="author-comment table">
+                              <div class="table-cell valign-middle">
+                                  <i class="fa fa-user color-1 fsize-14" aria-hidden="true"></i>
+                                  <span class="color-2 ml5">Showcase Fights</span>
+                              </div>
+
+                          </div>
+                      </a>
+                  </div>
+                  <div class="item col-lg-4 col-md-4 col-sm-12 col-sx-12">
+                      <a href="#" class="item-wrap">
+                          <div class="image">
+                              <img src="../assets/images/war.png" alt="" class="img-responsive">
+                          </div>
+                          <div class="item-info equal-height">
+
+                              <div class="item-title mt20" data-trim="40">$wrld Wars</div>
+                              <div class="item-text mt25 lheight-26">
+                                  Wars will be fought by Crews only. To take part in a war, you’ll need to purchase an apartment to join a crew. Only Commanders can declare wars and to fight in a war will cost (x)$wrld. $wrld will be divided amongst the winning team depending on kills.
+                              </div>
+                          </div>
+                          <div class="author-comment table">
+                              <div class="table-cell valign-middle">
+                                  <i class="fa fa-user color-1 fsize-14" aria-hidden="true"></i>
+                                  <span class="color-2 ml5">Crew Vs Crew</span>
+                              </div>
+
+                          </div>
+                      </a>
+                  </div>
+                  <div class="item col-lg-4 col-md-4 col-sm-12 col-sx-12">
+                      <a href="#" class="item-wrap">
+                          <div class="image">
+                              <img src="../assets/images/pvp.png" alt="" class="img-responsive">
+                          </div>
+                          <div class="item-info equal-height">
+
+                              <div class="item-title mt20" data-trim="40">Arena Pvp</div>
+                              <div class="item-text mt25 lheight-26">
+                                Spend $wrld, earn $wrld
+There will be 4 tiers of PVP. To compete you’ll need some $wrld. Lowest tier will cost 1$wrld, Highest tier will cost 20$wrld. To the winner goes the spoils.
+Every fight will give you XP that will allow you to rank up if you’re apart of a crew.
+
+                              </div>
+                          </div>
+                          <div class="author-comment table">
+                              <div class="table-cell valign-middle">
+                                  <i class="fa fa-user color-1 fsize-14" aria-hidden="true"></i>
+                                  <span class="color-2 ml5">Fight Anyone</span>
+                              </div>
+
+                          </div>
+                      </a>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </section>
+    <!-- BLOG SECTION END -->
+
+    <!-- GALLERY SECTION START -->
+    <section class="gallery main-gallery ptb150">
+        <div class="container">
+            <div class="row">
+                <div class="title-bl text-center wow fadeIn" data-wow-duration="2s">
+                    <div class="title color-white">
+                        Discover Deadlocke
+                    </div>
+                    <div class="subtitle">
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="grid-wrapper mt70">
+
+                    </div>
+                    <div class="item_container relative mt40">
+                        <div class="item origin col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="item-content">
+                                <div class="image-bl">
+                                    <img src="../assets/images/group1.jpg" alt="">
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="item playstation-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="item-content">
+                                <div class="image-bl">
+                                    <img src="../assets/images/group2.jpg" alt="">
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="item uplay col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="item-content">
+                                <div class="image-bl">
+                                    <img src="../assets/images/group3.jpg" alt="">
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="item steam xbox-one col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                            <div class="item-content">
+                                <div class="image-bl">
+                                    <img src="../assets/images/group4.jpg" alt="">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- GALLERY SECTION END -->
+
+    <!-- PRICE SECTION START -->
+    <section class="price ptb150">
+        <div class="container">
+            <div class="row">
+                <div class="title-bl text-center wow fadeIn" data-wow-duration="2s">
+                    <div class="title color-white">
+                        NFT OVERVIEW
+                    </div>
+
+                </div>
+                <div class="mt90">
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 wow fadeInLeft" data-wow-duration="2s">
+                        <div class="item standart text-center">
+                            <div class="ptb30 fsize-24 fweight-700 font-agency uppercase color-white">
+                                Apartments
+                            </div>
+                            <div class="current-bl color-white pt25 pb20">
+                                <div class="font-agency fweight-700 lheight-30">
+                                    <span class="fsize-24"></span>
+                                    <span class="fsize-48">3000</span>
+                                    <span class="fsize-24"></span>
+                                </div>
+                                <div class="fsize-14 uppercase fweight-700">
+                                    Supply
+                                </div>
+                            </div>
+                            <div class="price-content equal-height">
+                                <div class="item-list">Participlate in crew wars</div>
+                                <div class="item-list">Own your own share of Deadlocke</div>
+                                <div class="item-list">Get access to the crew chest to be able to build out your dreams in the metaverse!</div>
+                            </div>
+                            <div class="text-center pb60">
+                                <a href="#" class="btn border-btn color-white plr50 ptb19">Minting Soon...</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 wow fadeInDown" data-wow-duration="1s">
+                        <div class="item standart text-center">
+                            <div class="ptb30 fsize-24 fweight-700 font-agency uppercase color-white">
+                                Land
+                            </div>
+                            <div class="current-bl color-white pt25 pb20">
+                                <div class="font-agency fweight-700 lheight-30">
+                                    <span class="fsize-24"></span>
+                                    <span class="fsize-48">3000</span>
+                                    <span class="fsize-24"></span>
+                                </div>
+                                <div class="fsize-14 uppercase fweight-700">
+                                    Supply
+                                </div>
+                            </div>
+                            <div class="price-content equal-height">
+                                <div class="item-list">Airdropped to all apartment holders</div>
+                                <div class="item-list">Custom build whatever you desire</div>
+                                <div class="item-list">Earn $wrld with your land</div>
+                            </div>
+                            <div class="text-center pb60">
+                                <a href="#" class="btn border-btn color-white plr50 ptb19">Minting Soon...</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 wow fadeInDown" data-wow-duration="1s">
+                        <div class="item standart text-center">
+                            <div class="ptb30 fsize-24 fweight-700 font-agency uppercase color-white">
+                                Genesis Keys
+                            </div>
+                            <div class="current-bl color-white pt25 pb20">
+                                <div class="font-agency fweight-700 lheight-30">
+                                    <span class="fsize-24"></span>
+                                    <span class="fsize-48">420</span>
+                                    <span class="fsize-24"></span>
+                                </div>
+                                <div class="fsize-14 uppercase fweight-700">
+                                    Supply
+                                </div>
+                            </div>
+                            <div class="price-content equal-height">
+                                <div class="item-list">Have a vote in the DAO</div>
+                                <div class="item-list">Get whitelisted for all DeadLocke NFT drops</div>
+                                <div class="item-list">earn rewards from the $wrld Engine</div>
+                            </div>
+                            <div class="text-center pb60">
+                                <a href="#" class="btn border-btn color-white plr50 ptb19">Minting Soon...</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 wow fadeInRight" data-wow-duration="2s">
+                        <div class="item standart text-center">
+                            <div class="ptb30 fsize-24 fweight-700 font-agency uppercase color-white">
+                                Weapons
+                            </div>
+                            <div class="current-bl color-white pt25 pb20">
+                                <div class="font-agency fweight-700 lheight-30">
+                                    <span class="fsize-24"></span>
+                                    <span class="fsize-48">TBD</span>
+                                    <span class="fsize-24"></span>
+                                </div>
+                                <div class="fsize-14 uppercase fweight-700">
+                                    Supply
+                                </div>
+                            </div>
+                            <div class="price-content equal-height">
+                                <div class="item-list">Buy weapons as you fight your way to the top</div>
+                                <div class="item-list">7 different weapon classes and 55 different weapons</div>
+                                <div class="item-list">Upgradeable NFTs by Altura</div>
+                            </div>
+                            <div class="text-center pb60">
+                                <a href="#" class="btn border-btn color-white plr50 ptb19">Minting Soon...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- PRICE SECTION END -->
+    <!-- FAQ SECTION START -->
+    <section class="ptb150">
+        <div class="container">
+            <div class="row">
+                <div class="title-bl text-center wow fadeIn" data-wow-duration="2s">
+                    <div class="title color-white">
+                        Roadmap
+                    </div>
+                    <div class="subtitle">
+
+                    </div>
+                </div>
+                <div class="mt30 text-center">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="faq-container mt90">
+                    <div class="left-column-1 column col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="table">
+                            <div class="table-row">
+                                <div class="counter-round table-cell valign-top">
+                                    <div class="counter-bl">
+                                        01
+                                    </div>
+                                </div>
+                                <div class="counter-content table-cell valign-top">
+                                    <div class="counter-title">Phase 1</div>
+                                    <div class="counter-text mt25">
+                                        -Find the keys <br>
+                                        -Item Drops <br>
+                                        -Beta testing for keyholders <br>
+                                        -DeadLocke Tournament <br>
+                                        -Weapon/Vehicle release <br>
+                                        <br>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-column-2 column col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="table">
+                            <div class="table-row">
+                                <div class="counter-content table-cell valign-top text-left">
+                                    <div class="counter-title">Phase 2</div>
+                                    <div class="counter-text mt25">
+                                        -Portal to Deadlocke opens <br>
+                                        to the public <br>
+                                        -Preparations begin for <br>$wrld Battle Royale <br>
+                                        -Release the $wrld engine  <br>
+                                        -$wrld Engine reward distribution <br>
+                                        -In-game property sale <br>
+
+                                    </div>
+                                </div>
+                                <div class="counter-round table-cell valign-top">
+                                    <div class="counter-bl">
+                                        02
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left-column-3 column col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="table">
+                            <div class="table-row">
+                                <div class="counter-round table-cell valign-top">
+                                    <div class="counter-bl">
+                                        03
+                                    </div>
+                                </div>
+                                <div class="counter-content table-cell valign-top">
+                                    <div class="counter-title">Phase 3</div>
+                                    <div class="counter-text mt25">
+                                        -New islands added to the multiverse <br>
+                                        -Minigames released  <br>
+                                        -Partnerships <br>
+                                        -New Questlines <br>
+                                         <br>
+                                         <br>
+                                         <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="right-column-4 column col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="table">
+                            <div class="table-row">
+                                <div class="counter-content table-cell valign-top text-left">
+                                    <div class="counter-title">Phase 4</div>
+                                    <div class="counter-text mt25">
+                                        -Apartment holder land claim<br>
+                                        -Launchpad <br>
+                                        -Expansion into<br> other metaverses <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                    </div>
+                                </div>
+                                <div class="counter-round table-cell valign-top">
+                                    <div class="counter-bl">
+                                        04
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </section>
+    <!-- FAQ SECTION END -->
+    <!-- REGISTER SECTION START -->
+    <section class="register-section background-gradient">
+      <div class="container">
+        <center>
+          <h1 class="pt25 team">TEAM</h1>
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 team-con">
+            <img src="../assets/images/n.png" class ="team-img" alt="">
+            <div class="uppercase fsize-32 fweight-700 font-agency color-white lheight-normal">
+                Nate
+            </div>
+            <div class="table-cell valign-middle ws-20 color-1 font-agency">
+                CoFounder
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 team-con">
+            <img src="../assets/images/s.png" class ="team-img" alt="">
+            <div class="uppercase fsize-32 fweight-700 font-agency color-white lheight-normal">
+                Seth
+            </div>
+            <div class="table-cell valign-middle ws-20 color-1 font-agency">
+                CoFounder
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 team-con">
+            <img src="../assets/images/game-image-4.jpg" class ="team-img" alt="">
+            <div class="uppercase fsize-32 fweight-700 font-agency color-white lheight-normal">
+                Cam
+            </div>
+            <div class="table-cell valign-middle ws-20 color-1 font-agency">
+                Game-Designer
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 team-con">
+            <img src="../assets/images/j.png" class ="team-img" alt="">
+            <div class="uppercase fsize-32 fweight-700 font-agency color-white lheight-normal">
+                Jesse
+            </div>
+            <div class="table-cell valign-middle ws-20 color-1 font-agency">
+                Community-Manager
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- REGISTER SECTION END -->
+    <!-- FOOTER START -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row mb110">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <a href="index.html">
+                        <img src="../assets/images/logo.png" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 text-right">
+                    <ul class="footer-menu">
+                        <li class="active">
+                            <a href="index.html">
+                                Homepage
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="gallery-masonry.html">
+                                Gallery
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://deadlocke.gitbook.io/untitled/overview/project-overview">
+                                Whitepaper
+                            </a>
+                        </li>
+
+                    </ul>
+                    <div class="mt60">
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="copyright ptb30 col-lg-12">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        © Copyright 2022
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right">
+                        All Rights Reserved
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER END -->
+    <a href="#" id="toTop" class="color-white">
+        <i class="fa fa-angle-up fsize-14" aria-hidden="true"></i>
+	</a>
+    <!-- Scripts -->
+    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/plugins/slick-1.8.0/slick/slick.min.js"></script>
+    <script src="../assets/plugins/flex-menu/flexmenu.min.js"></script>
+    <script src="../assets/plugins/jquery-match-height-master/dist/jquery.matchHeight.js"></script>
+    <script src="../assets/plugins/muuri-master/muuri.js"></script>
+    <script src="../assets/plugins/vide-0.5.1/dist/jquery.vide.min.js"></script>
+    <script src="../assets/plugins/paroller.js-master/dist/jquery.paroller.min.js"></script>
+    <script src="../assets/js/video.js"></script>
+    <script src="../assets/js/jquery.inview.min.js"></script>
+    <script src="../assets/js/progressbar.min.js"></script>
+    <script src="../assets/plugins/lightbox2-master/dist/js/lightbox.js"></script>
+    <script src="../assets/js/moment.min.js"></script>
+    <script src="../assets/plugins/jquery-date-range-picker-master/dist/jquery.daterangepicker.min.js"></script>
+    <script src="../assets/plugins/wow-master/dist/wow.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+</body>
+
+</html>
