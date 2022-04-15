@@ -3041,8 +3041,7 @@ footer.footer {
      24. Team Page
      ========================================================================== */
      .center-team {
-       display: flex;
-       justify-content: center;
+       margin-left: 220px;
      }
      .team-img {
        border-radius: 50%;
@@ -3059,5 +3058,5 @@ footer.footer {
        border-radius:3px;
        margin: 15px;
        text-shadow: 0 2px 4.8px rgba(30, 29, 50, 0.3);
-       
+
      }
