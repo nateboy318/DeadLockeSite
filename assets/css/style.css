@@ -1892,7 +1892,7 @@ header {
     overflow: hidden;
     margin-bottom: 30px; }
     .price .item.standart .current-bl {
-      background: #e6ab00; }
+      background: #E26A00; }
     .price .item.gold .current-bl {
       background: #e6ab00; }
     .price .item.platinum .current-bl {
@@ -3059,4 +3059,11 @@ footer.footer {
        margin: 15px;
        text-shadow: 0 2px 4.8px rgba(30, 29, 50, 0.3);
 
+     }
+
+     .vision-box {
+       background-color: #E26A00;
+       padding:80px;
+       text-shadow: 0 2px 4.8px rgba(30, 29, 50, 0.3);
+       border-radius: 5px
      }
