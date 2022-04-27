@@ -1,0 +1,20 @@
+{
+    "name": "Rebels Hollow Key",
+    "description": "Keys to the Deadlocke Multiverse and beyond. Created by Naterz.eth and Mak3r.eth.",
+    "image": "ipfs://QmcwJN9qGKYj71FVzY96cJv6fr6sQuBPW3aSLo1MKQDb1a/114.png",
+    "attributes": [
+      {
+        "trait_type": "District",
+        "value": "Rebels Hollow"
+      },
+      {
+        "trait_type": "Job",
+        "value": "Crafter"
+      },
+      {
+        "trait_type": "Crew",
+        "value": "Rebels"
+      }
+    ],
+    "compiler": "DeadLocke"
+  }

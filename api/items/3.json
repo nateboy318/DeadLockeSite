@@ -1,0 +1,20 @@
+{
+    "name": "Galactic Hold Key",
+    "description": "Keys to the Deadlocke Multiverse and beyond. Created by Naterz.eth and Mak3r.eth.",
+    "image": "ipfs://QmcwJN9qGKYj71FVzY96cJv6fr6sQuBPW3aSLo1MKQDb1a/257.png",
+    "attributes": [
+      {
+        "trait_type": "District",
+        "value": "Galactic Hold"
+      },
+      {
+        "trait_type": "Job",
+        "value": "Crafter"
+      },
+      {
+        "trait_type": "Crew",
+        "value": "Lumineers"
+      }
+    ],
+    "compiler": "DeadLocke"
+  }
